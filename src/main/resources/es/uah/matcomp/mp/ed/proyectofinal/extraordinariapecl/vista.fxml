@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="es.uah.matcomp.mp.ed.proyectofinal.extraordinariapecl.Age_Of_Threads.Controller">
+
+    <top>
+        <Label text="Age of Threads"
+               style="-fx-font-size: 24; -fx-font-weight: bold; -fx-padding: 10;"
+               BorderPane.alignment="CENTER"/>
+    </top>
+
+    <center>
+        <VBox spacing="10" alignment="CENTER" padding="10">
+            <HBox spacing="15" alignment="CENTER">
+                <Button fx:id="btnIniciar" text="Campana" onAction="#iniciarSimulacion"/>
+                <Button text="Pausa" onAction="#pausarSimulacion"/>
+                <Button text="Reanudar" onAction="#reanudarSimulacion"/>
+            </HBox>
+
+            <HBox spacing="20" alignment="CENTER">
+                <Label fx:id="labelOro" text="Oro: 0"/>
+                <Label fx:id="labelMadera" text="Madera: 0"/>
+                <Label fx:id="labelComida" text="Comida: 0"/>
+            </HBox>
+
+            <HBox spacing="20">
+                <!-- Zonas de recurso -->
+                <VBox spacing="10">
+                    <Label text="Áreas de recursos" style="-fx-font-weight: bold;"/>
+                    <TitledPane text="Mina">
+                        <VBox spacing="5">
+                            <FlowPane fx:id="aldeanosMina"/>
+                            <FlowPane fx:id="guerrerosMina"/>
+                            <FlowPane fx:id="barbarosMina"/>
+                        </VBox>
+                    </TitledPane>
+                    <TitledPane text="Bosque">
+                        <VBox spacing="5">
+                            <FlowPane fx:id="aldeanosBosque"/>
+                            <FlowPane fx:id="guerrerosBosque"/>
+                            <FlowPane fx:id="barbarosBosque"/>
+                        </VBox>
+                    </TitledPane>
+                    <TitledPane text="Granja">
+                        <VBox spacing="5">
+                            <FlowPane fx:id="aldeanosGranja"/>
+                            <FlowPane fx:id="guerrerosGranja"/>
+                            <FlowPane fx:id="barbarosGranja"/>
+                        </VBox>
+                    </TitledPane>
+                </VBox>
+
+                <!-- Centro urbano -->
+                <VBox spacing="10">
+                    <Label text="Centro urbano" style="-fx-font-weight: bold;"/>
+                    <TitledPane text="Cuartel">
+                        <FlowPane fx:id="cuartel"/>
+                    </TitledPane>
+                    <TitledPane text="Plaza central">
+                        <FlowPane fx:id="plazaCentral"/>
+                    </TitledPane>
+                    <TitledPane text="Casa principal">
+                        <FlowPane fx:id="casaPrincipal"/>
+                    </TitledPane>
+                    <TitledPane text="Área de recuperación">
+                        <FlowPane fx:id="areaRecuperacion"/>
+                    </TitledPane>
+                </VBox>
+
+                <!-- Almacenes -->
+                <VBox spacing="10">
+                    <Label text="Almacenes" style="-fx-font-weight: bold;"/>
+                    <TitledPane text="Tesorería">
+                        <FlowPane fx:id="tesoreria"/>
+                    </TitledPane>
+                    <TitledPane text="Aserradero">
+                        <FlowPane fx:id="aserradero"/>
+                    </TitledPane>
+                    <TitledPane text="Granero">
+                        <FlowPane fx:id="granero"/>
+                    </TitledPane>
+                </VBox>
+
+                <!-- Bárbaros -->
+                <VBox spacing="10">
+                    <Label text="Bárbaros" style="-fx-font-weight: bold;"/>
+                    <TitledPane text="Zona de preparación">
+                        <FlowPane fx:id="zonaPreparacion"/>
+                    </TitledPane>
+                    <TitledPane text="Campamento">
+                        <FlowPane fx:id="campamento"/>
+                    </TitledPane>
+                </VBox>
+            </HBox>
+
+            <!-- Panel de mejoras -->
+            <VBox spacing="10" alignment="CENTER_LEFT" style="-fx-border-color: black; -fx-padding: 10;">
+                <Label text="Mejoras y unidades" style="-fx-font-weight: bold;"/>
+                <HBox spacing="10">
+                    <Button fx:id="botonEntrenarGuerrero" text="Entrenar Guerrero" onAction="#entrenarGuerrero"/>
+                </HBox>
+                <HBox spacing="10">
+                    <Button fx:id="botonComprarAldeano" text="Comprar Aldeano" onAction="#comprarAldeano"/>
+                </HBox>
+                <HBox spacing="10">
+                    <Button fx:id="botonHerramientas" text="Mejorar Herramientas" onAction="#mejorarHerramientas"/>
+                    <Label fx:id="labelNivelHerramientas" text="Nivel: 0"/>
+                </HBox>
+                <HBox spacing="10">
+                    <Button fx:id="botonArmas" text="Mejorar Armas" onAction="#mejorarArmas"/>
+                    <Label fx:id="labelNivelArmas" text="Nivel: 0"/>
+                </HBox>
+                <HBox spacing="10">
+                    <Button fx:id="botonAlmacenes" text="Ampliar Almacenes" onAction="#mejorarAlmacenes"/>
+                    <Label fx:id="labelNivelAlmacenes" text="Nivel: 0"/>
+                </HBox>
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>
